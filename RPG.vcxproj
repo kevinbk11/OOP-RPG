@@ -156,6 +156,9 @@
     <ClInclude Include="GameObject\NPC\NPC.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Player\Player.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
