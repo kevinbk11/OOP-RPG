@@ -54,6 +54,21 @@
     <ClCompile Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="ControlCenter\Controller\OutputController.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\Skill.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffects\HarmfulEffect.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffect.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlCenter\Controller\AttackController.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -95,8 +110,20 @@
     <ClInclude Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".gitignore" />
+    <ClInclude Include="ControlCenter\Controller\OutputController.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\Skill.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffects\HarmfulEffect.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffect.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlCenter\Controller\AttackController.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

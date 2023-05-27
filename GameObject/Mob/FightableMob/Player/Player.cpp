@@ -6,16 +6,14 @@ Player::Player(string name) {
 	this->basicDamageValue = 35;
 	this->basicDefenseValue = 20;
 }
-void Player::attack(FightableMob* mob) {
-	cout << "ª±®a"<<this->name<<"µo°Ê§ðÀ»\n";
-	FightableMob::attack(mob);
+void Player::attack(Mob* mob) {
+
 	
 }
 void Player::getAttack(DamageObject* damageObject) {
 	FightableMob::getAttack(damageObject);
 	cout << "£«£«£«£«ªü";
 }
-
 
 
 

@@ -4,6 +4,6 @@ using namespace std;
 class GameObject
 {
 public:
-	string name = "";
+	string name;
 };
 

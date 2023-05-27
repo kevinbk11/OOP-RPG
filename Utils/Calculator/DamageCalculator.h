@@ -3,6 +3,6 @@
 class DamageCalculator
 {
 public:
-	int calculate(FightableMob*, FightableMob*);
+	int calculate(FightableMob*, Mob*);
 };
 

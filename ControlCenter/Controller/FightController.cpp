@@ -1,7 +1,10 @@
 #include "FightController.h"
+#include "../../ControlCenter/ControlCenter.h"
 
 FightController* FightController::controller = nullptr;
-FightController::FightController() {}
+FightController::FightController() {
+	this->isPlayerTurn = true;
+}
 FightController* FightController::getInstance()
 {
 	if (controller == NULL) {
@@ -9,6 +12,24 @@ FightController* FightController::getInstance()
 	}
 	return controller;
 }
-void FightController::fight(FightableMob* m1, FightableMob* m2){
-	m1->attack(m2);
+void FightController::fight(Player* player, FightableMob* mob){
+	OutputController* outputController = ControlCenter::getOutputController(); 
+	AttackController* attackController = ControlCenter::getAttackController();
+	while (player->isLive() && mob->isLive()) {
+		if (isPlayerTurn) {
+			cout << "輸入1選擇攻擊模式\n輸入2選擇道具\n輸入3逃跑\n";
+			int command;
+			cin >> command;
+			switch (command) {
+				case 1:
+					attackController->choiceSkill(player);
+					attackController->attack(player, mob);
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+			}
+		}
+	}
 }

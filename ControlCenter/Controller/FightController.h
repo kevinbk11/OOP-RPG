@@ -1,14 +1,14 @@
 #pragma once
-#include <cstddef>
-#include "../../GameObject/Mob/FightableMob/FightableMob.h"
 #include "../../Utils/Calculator/DamageCalculator.h"
+#include "../../GameObject/Mob/FightableMob/Player/Player.h"
 class FightController
 {
 public:
-	static FightController* getInstance();
-	void fight(FightableMob*,FightableMob*);
+	static FightController* getInstance();	
+	void fight(Player*,FightableMob*);
 private:
+	bool isPlayerTurn;
 	static FightController* controller;
-	FightController();
+	FightController();	
 };
 

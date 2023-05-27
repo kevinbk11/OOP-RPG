@@ -1,4 +1,2 @@
 #include "Fightable.h"
-void Fightable::attack(Mob*) {
-
-}
+void Fightable::attack(Mob* mob) {}

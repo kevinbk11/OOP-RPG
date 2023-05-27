@@ -1,14 +1,11 @@
 #pragma once
-#include<iostream>
 #include "../FightableMob.h"
-
-using namespace std;
 class Player:public FightableMob
 {
 
 public:
 	Player(string name);
-	void attack(FightableMob*);
+	void attack(Mob*);
 	void getAttack(DamageObject* damageObject);
 private:
 	int level = 0;

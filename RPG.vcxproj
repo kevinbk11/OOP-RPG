@@ -127,9 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ControlCenter\Controller\AttackController.cpp" />
     <ClCompile Include="ControlCenter\ControlCenter.cpp" />
     <ClCompile Include="ControlCenter\Controller\FightController.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.cpp" />
+    <ClCompile Include="ControlCenter\Controller\OutputController.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\Skill.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffects\HarmfulEffect.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffect.cpp" />
     <ClCompile Include="Utils\Calculator\DamageCalculator.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\FightableMob.cpp" />
     <ClCompile Include="Utils\Creater.cpp" />
@@ -142,9 +147,14 @@
     <ClCompile Include="RPG.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControlCenter\Controller\AttackController.h" />
     <ClInclude Include="ControlCenter\ControlCenter.h" />
     <ClInclude Include="ControlCenter\Controller\FightController.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.h" />
+    <ClInclude Include="ControlCenter\Controller\OutputController.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\Skill.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffects\HarmfulEffect.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffect.h" />
     <ClInclude Include="Utils\Calculator\DamageCalculator.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\FightableMob.h" />
     <ClInclude Include="Utils\Creater.h" />
@@ -155,9 +165,6 @@
     <ClInclude Include="GameObject\Mob\Mob.h" />
     <ClInclude Include="GameObject\NPC\NPC.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Player\Player.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
