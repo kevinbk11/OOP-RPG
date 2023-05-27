@@ -32,4 +32,5 @@ void FightController::fight(Player* player, FightableMob* mob){
 			}
 		}
 	}
+	cout << "¾Ô°«µ²§ô";
 }

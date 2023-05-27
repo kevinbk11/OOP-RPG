@@ -135,6 +135,7 @@
     <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\Skill.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffects\HarmfulEffect.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffect.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\Skills\NormalAttack.cpp" />
     <ClCompile Include="Utils\Calculator\DamageCalculator.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\FightableMob.cpp" />
     <ClCompile Include="Utils\Creater.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\Skill.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffects\HarmfulEffect.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffect.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\Skills\NormalAttack.h" />
     <ClInclude Include="Utils\Calculator\DamageCalculator.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\FightableMob.h" />
     <ClInclude Include="Utils\Creater.h" />
