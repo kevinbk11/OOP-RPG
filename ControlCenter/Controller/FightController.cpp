@@ -12,9 +12,9 @@ FightController* FightController::getInstance()
 	}
 	return controller;
 }
+
 void FightController::fight(Player* player, FightableMob* mob){
-	OutputController* outputController = ControlCenter::getOutputController(); 
-	AttackController* attackController = ControlCenter::getAttackController();
+	AttackController* attackController = ControlCenter::getInstance<AttackController>();
 	while (player->isLive() && mob->isLive()) {
 		if (isPlayerTurn) {
 			cout << "輸入1選擇攻擊模式\n輸入2選擇道具\n輸入3逃跑\n";
@@ -22,8 +22,8 @@ void FightController::fight(Player* player, FightableMob* mob){
 			cin >> command;
 			switch (command) {
 				case 1:
-					attackController->choiceSkill(player);
-					attackController->attack(player, mob);
+					//attackController->choiceSkill(player);
+					//attackController->attack(player, mob);
 					break;
 				case 2:
 					break;
@@ -32,5 +32,5 @@ void FightController::fight(Player* player, FightableMob* mob){
 			}
 		}
 	}
-	cout << "戰鬥結束";
+	cout << "戰鬥結束";	
 }

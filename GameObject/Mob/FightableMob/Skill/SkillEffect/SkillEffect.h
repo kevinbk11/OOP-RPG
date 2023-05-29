@@ -1,5 +1,5 @@
 #pragma once
-#include "../../../FightableMob.h"
+#include "../../FightableMob.h"
 class SkillEffect
 {
 public:

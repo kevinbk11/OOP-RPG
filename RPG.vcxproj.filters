@@ -18,9 +18,6 @@
     <ClCompile Include="RPG.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Utils\Creater.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject\Mob\FightableMob\Player\Player.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -45,39 +42,54 @@
     <ClCompile Include="ControlCenter\Controller\FightController.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Utils\Calculator\DamageCalculator.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject\Mob\FightableMob\FightableMob.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="ControlCenter\Controller\OutputController.cpp">
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skill.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\Skill.cpp">
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\HarmfulEffect.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffects\HarmfulEffect.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffect.cpp">
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffect.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="ControlCenter\Controller\AttackController.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\Mob\FightableMob\Player\Skill\Skills\NormalAttack.cpp">
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\NormalAttack.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Player\Hero\Fighter.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlCenter\Controller\CreateHeroController.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlCenter\Controller\GameController.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Map\Map.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\MapObjectGenerator\MapBuilder.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\GameMap.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\MapObjectGenerator\MapLinker.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\MapObjectGenerator\GameMapGenerator.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\Creater.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Mob\FightableMob\Player\Player.h">
@@ -104,31 +116,52 @@
     <ClInclude Include="ControlCenter\Controller\FightController.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Utils\Calculator\DamageCalculator.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject\Mob\FightableMob\FightableMob.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="ControlCenter\Controller\OutputController.h">
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skill.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\Skill.h">
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\HarmfulEffect.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffects\HarmfulEffect.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\SkillEffect\SkillEffect.h">
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffect.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="ControlCenter\Controller\AttackController.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject\Mob\FightableMob\Player\Skill\Skills\NormalAttack.h">
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\NormalAttack.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Player\Hero\Fighter.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlCenter\Controller\CreateHeroController.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlCenter\Controller.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlCenter\Controller\GameController.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Map\Map.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\MapObjectGenerator\MapBuilder.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\GameMap.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\MapObjectGenerator\MapLinker.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\MapObjectGenerator\GameMapGenerator.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

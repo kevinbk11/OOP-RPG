@@ -2,7 +2,7 @@
 #include "../Mob.h"
 #include "../Fightable.h"
 #include "../../../Utils/DamageObject.h"
-#include "Player/Skill/Skill.h"
+#include "../FightableMob/Skill/Skill.h"
 #include <vector>
 class Skill;
 class FightableMob :public Mob,public Fightable

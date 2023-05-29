@@ -10,4 +10,3 @@ private:
 	static AttackController* controller;
 	AttackController();
 };
-

@@ -1,5 +1,4 @@
 #include "FightableMob.h"
-#include "../../../Utils/Calculator/DamageCalculator.h"
 FightableMob::FightableMob() {
 }
 int FightableMob::getBasicDamageValue() {

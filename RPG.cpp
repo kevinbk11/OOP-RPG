@@ -6,16 +6,31 @@ using namespace std;
 int main()
 {
     cout << "輸入0為創建角色，輸入1為讀檔\n";
-    Player *p1 = new Player("A");
-    TestMonster1 *p2 = new TestMonster1();
-    FightController* controller = ControlCenter::getFightController();
-    controller->fight(p1, p2);
-    /*int command;
+   
+    int command;
     cin >> command;
-    switch (command) {
-    case 0:
-        //PlayerCreater creater = new PlayerCreater();
-    }*/
+    GameController* gameController = ControlCenter::getInstance<GameController>();
+    switch (command) 
+    {
+        case 0: {
+            cout << "請輸入你的角色名字\n";
+            string name;
+            cin >> name;
+            cout << "請輸入你的職業代碼，1為戰士，2為法師\n";
+            cin >> command;
+            CreateHeroController* creater = nullptr;
+            Player* player;
+            creater = ControlCenter::getInstance<CreateHeroController>();
+            player = creater->createPlayer(name, command);
+            system("cls");
+            gameController->gameStart(player);
+            break;
+        }
+        case 1: {
+            gameController->gameStart(nullptr);
+            break;
+        }
+    }
 }
 
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表

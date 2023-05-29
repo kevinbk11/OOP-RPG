@@ -1,11 +1,6 @@
 #include "Player.h"
 Player::Player(string name) {
 	this->name = name;
-	this->hp = 500;
-	this -> mp = 500;
-	this->basicDamageValue = 35;
-	this->basicDefenseValue = 20;
-	this->setSkill(new NormalAttack());
 }
 void Player::attack(Mob* mob) {
 	this->executeSkill(this,mob);
@@ -20,5 +15,11 @@ void Player::executeSkill(Player* player,Mob* mob) {
 }
 void Player::setSkillChoice(Skill* skill) {
 	this->skillChoice = skill;
+}
+void Player::setLocate(Map* map) {
+	this->locate = map;
+}
+Map* Player::getLocate() {
+	return this->locate;
 }
 

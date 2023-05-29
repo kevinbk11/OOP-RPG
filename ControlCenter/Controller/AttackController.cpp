@@ -1,6 +1,5 @@
 #include "AttackController.h"
 AttackController* AttackController::controller = nullptr;
-AttackController::AttackController() {}
 AttackController* AttackController::getInstance()
 {
 	if (controller == nullptr) {
@@ -8,6 +7,7 @@ AttackController* AttackController::getInstance()
 	}
 	return controller;
 }
+AttackController::AttackController() {}
 void AttackController::attack(Player* player, Mob* mob) {
 	player->attack(mob);
 }

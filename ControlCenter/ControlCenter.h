@@ -1,14 +1,15 @@
 #pragma once
-#include "Controller/FightController.h"
-#include "Controller/OutputController.h"
-#include "Controller/AttackController.h"
+#include "Controller.h"
 class ControlCenter
 {
 public:
-	static FightController* getFightController();
-	static OutputController* getOutputController();
-	static AttackController* getAttackController();
+	template<typename T>
+	static T* getInstance();
 private:
 	ControlCenter();
 };
+template <typename T>
+T* ControlCenter::getInstance() {
+	return T::getInstance();
+}
 
