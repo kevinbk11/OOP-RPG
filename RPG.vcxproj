@@ -134,7 +134,6 @@
     <ClCompile Include="ControlCenter\Controller\GameController.cpp" />
     <ClCompile Include="Utils\MapObjectGenerator\GameMapGenerator.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Player\Hero\Fighter.cpp" />
-    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skill.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\HarmfulEffect.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffect.cpp" />
@@ -151,6 +150,7 @@
     <ClCompile Include="GameObject\NPC\NPC.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Player\Player.cpp" />
     <ClCompile Include="RPG.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Wolf.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControlCenter\Controller\AttackController.h" />
@@ -159,9 +159,9 @@
     <ClInclude Include="ControlCenter\Controller\CreateHeroController.h" />
     <ClInclude Include="ControlCenter\Controller.h" />
     <ClInclude Include="ControlCenter\Controller\GameController.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys.h" />
     <ClInclude Include="Utils\MapObjectGenerator\GameMapGenerator.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Player\Hero\Fighter.h" />
-    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skill.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\HarmfulEffect.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffect.h" />
@@ -178,6 +178,7 @@
     <ClInclude Include="GameObject\Mob\Mob.h" />
     <ClInclude Include="GameObject\NPC\NPC.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Player\Player.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Wolf.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

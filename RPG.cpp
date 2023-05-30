@@ -5,7 +5,7 @@
 using namespace std;
 int main()
 {
-    cout << "輸入0為創建角色，輸入1為讀檔\n";
+    cout << "輸入0為創建角色，輸入1為讀檔。\n";
    
     int command;
     cin >> command;
@@ -13,10 +13,10 @@ int main()
     switch (command) 
     {
         case 0: {
-            cout << "請輸入你的角色名字\n";
+            cout << "請輸入你的角色名字。\n";
             string name;
             cin >> name;
-            cout << "請輸入你的職業代碼，1為戰士，2為法師\n";
+            cout << "請輸入你的職業代碼，1為戰士，2為法師。\n";
             cin >> command;
             CreateHeroController* creater = nullptr;
             Player* player;

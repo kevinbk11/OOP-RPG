@@ -45,9 +45,6 @@
     <ClCompile Include="GameObject\Mob\FightableMob\FightableMob.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skill.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -87,6 +84,9 @@
     <ClCompile Include="Utils\MapObjectGenerator\GameMapGenerator.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Wolf.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -117,9 +117,6 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Mob\FightableMob\FightableMob.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\TestMonster1.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skill.h">
@@ -162,6 +159,12 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Utils\MapObjectGenerator\GameMapGenerator.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Wolf.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,8 +5,7 @@ GameMap GameMapGenerator::generate() {
 	maps.push_back(builder->setName("ªì¤ßÂí")
 		->createMap());
 	maps.push_back(builder->setName("¯ó­ì1")
-		->setMonster(new TestMonster1())
-		->setMonster(new TestMonster1())
+		->setMonster(new Wolf())
 		->createMap());
 	MapLinker* linker = new MapLinker();
 	linker->link(maps);

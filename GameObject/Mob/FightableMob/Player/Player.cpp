@@ -7,10 +7,10 @@ void Player::attack(Mob* mob) {
 }
 void Player::getAttack(DamageObject* damageObject) {
 	FightableMob::getAttack(damageObject);
-	cout << "ㄚㄚㄚㄚ阿";
+	cout << "ㄚㄚㄚㄚ阿a";
 }
 void Player::executeSkill(Player* player,Mob* mob) {
-	cout << this->name << "使用了" << this->skillChoice->skillName << endl;
+	cout << this->name << "使用了" << this->skillChoice->skillName <<"。" << endl;
 	this->skillChoice->executeEffect(player, mob);
 }
 void Player::setSkillChoice(Skill* skill) {

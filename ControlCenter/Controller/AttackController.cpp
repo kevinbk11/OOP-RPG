@@ -18,7 +18,7 @@ void AttackController::choiceSkill(Player* player) {
 		cout << i + 1 << "." << (*skills)[i]->skillName << endl;
 	}
 	int command;
-	cout << "請輸入技能編號";
+	cout << "請輸入技能編號。";
 	cin >> command;
 	player->setSkillChoice((*skills)[command-1]);
 }
