@@ -11,7 +11,7 @@ FightController* FightController::getInstance()
 	return controller;
 }
 
-void FightController::fight(Player* player, FightableMob* mob){
+void FightController::fight(Player* player, Enemy* mob){
 	AttackController* attackController = ControlCenter::getInstance<AttackController>();
 	this->isPlayerTurn = true;
 	while (player->isLive() && mob->isLive()) {
@@ -29,6 +29,20 @@ void FightController::fight(Player* player, FightableMob* mob){
 					attackController->attack(player, mob);
 					break;
 				case 2:
+					if (!player->printBag()) {
+						system("cls");
+						continue;
+					}
+					cout << "請輸入你要使用的道具，輸入0返回。\n";
+					cin >> command;
+					if (command == 0) {
+						system("cls");
+						continue;
+					}
+					while (!player->useItem(command - 1)) {
+						cin >> command;
+					}
+
 					break;
 				case 3:
 					cout << "逃跑成功。";
@@ -43,15 +57,11 @@ void FightController::fight(Player* player, FightableMob* mob){
 	}
 	system("cls");
 	cout <<endl<< "戰鬥結束。\n";
-	FightableMob* winner;
-	FightableMob* loser;
 	if (player->isLive()) {
-		winner = player;
-		loser = mob;
+		player->getMonsterBooty(mob);
 	}
 	else {
-		winner = mob;
-		loser = player;
+		player->respawn();
 	}
-	loser->respawn();
+	mob->respawn();
 }

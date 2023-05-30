@@ -19,3 +19,9 @@ void Mob::respawn() {
 	this->hp = this->fullHp;
 	this->mp = this->fullMp;
 }
+void Mob::addHp(int value) {
+	this->hp = this->hp + value < this->fullHp ? this->hp + value : this->fullHp;
+}
+void Mob::addMp(int value) {
+	this->mp = this->mp + value < this->fullMp ? this->mp + value : this->fullMp;
+}

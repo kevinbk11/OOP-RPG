@@ -10,6 +10,8 @@ public:
 	bool isLive();
 	int getHp();
 	int getMp();
+	void addHp(int);
+	void addMp(int);
 	virtual void respawn();
 protected:
 	int hp;

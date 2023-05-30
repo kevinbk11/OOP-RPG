@@ -9,3 +9,8 @@ Fighter::Fighter(string name):Player(name) {
 	this->basicDefenseValue = 10;
 	this->setSkill(new NormalAttack());
 }
+void Fighter::levelUp() {
+	this->fullHp += 50;
+	this->fullMp += 5;
+	Player::levelUp();
+}

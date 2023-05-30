@@ -4,6 +4,7 @@
 class Fighter:public Player
 {
 public:
+	void levelUp();
 	Fighter(string);
 };
 

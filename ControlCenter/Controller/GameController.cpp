@@ -18,22 +18,28 @@ void GameController::gameStart(Player* player) {
 	this->initMap();
 	player->setLocate(this->mapObject.getRespawnPoint());
 	while (true) {
-		cout <<"輸入0前往上一張地圖，輸入1前往下一張地圖，輸入2查看此處的怪物並選擇要戰鬥的怪物。\n";
+		cout <<"輸入0前往上一張地圖\n\n輸入1前往下一張地圖\n\n";
+		cout << "輸入2查看此處的怪物並選擇要戰鬥的怪物\n\n輸入3查看此處的NPC並選擇要對話的NPC\n\n";
+		cout << "輸入4查看角色狀態\n\n";
+		
 		Map* locate = player->getLocate();
-		vector<FightableMob*> mobs = locate->getAllMob();
 		cout << "目前所在地:"<<locate->name<<endl;
 		int command;
 		cin >> command;
 		system("cls");
 		switch (command) {
 			case 0: {
+				if (locate->getPreviousMap() == nullptr)cout << "沒有上一張地圖。\n\n";
+				else player->setLocate(locate->getPreviousMap());
 				break;
 			}
 			case 1: {
-				player->setLocate(locate->getNextMap());
+				if (locate->getNextMap() == nullptr)cout << "沒有下一張地圖。\n\n";
+				else player->setLocate(locate->getNextMap());
 				break;
 			}
 			case 2: {
+				vector<Enemy*> mobs = locate->getAllMob();
 				if (mobs.size() == 0)cout << "這裡沒有怪物。\n";
 				else {
 					cout << "請輸入怪物代碼來進入戰鬥。\n";
@@ -41,11 +47,32 @@ void GameController::gameStart(Player* player) {
 						cout << "怪物" << i + 1 << ":" << mobs[i]->name << endl;
 					}
 					cin >> command;
-					FightableMob *mob = mobs[command - 1];
+					system("cls");
+					Enemy *mob = mobs[command - 1];
 					FightController *controller = ControlCenter::getInstance<FightController>();
 					controller->fight(player, mob);
 					cout << endl;
 				}
+				break;
+			}
+			case 3: {
+				vector<NPC*> NPCs = locate->getAllNPC();
+				if (NPCs.size() == 0)cout << "這裡沒有NPC。\n";
+				else {
+					cout << "請輸入NPC代碼來進入對話。\n";
+					for (int i = 0; i < NPCs.size(); i++) {
+						cout << "NPC." << i + 1 << ":" << NPCs[i]->name << endl;
+					}
+					cin >> command;
+					system("cls");
+					NPCs[command - 1]->talk();
+					cout << endl;
+				}
+				break;
+			}
+			case 4: {
+				player->printDetails();
+				break;
 			}
 		}
 	}

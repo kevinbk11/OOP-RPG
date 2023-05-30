@@ -1,6 +1,6 @@
 #include "Map.h"
 Map::Map() {
-	this->mobList = vector<FightableMob*>();
+	this->mobList = vector<Enemy*>();
 }
 void Map::setNextMap(Map* map) {
 	this->nextMap = map;
@@ -14,9 +14,15 @@ Map* Map::getNextMap() {
 Map* Map::getPreviousMap() {
 	return this->prevMap;
 }
-vector<FightableMob*> Map::getAllMob() {
+vector<Enemy*> Map::getAllMob() {
 	return this->mobList;
 }
-void Map::addMonster(FightableMob* monster) {
+vector<NPC*> Map::getAllNPC() {
+	return this->NPCList;
+}
+void Map::addMonster(Enemy* monster) {
 	this->mobList.push_back(monster);
+}
+void Map::addNPC(NPC* npc) {
+	this->NPCList.push_back(npc);
 }

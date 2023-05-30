@@ -1,20 +1,24 @@
 #pragma once
 #include<string>
 #include<vector>
-#include "../Mob/FightableMob/FightableMob.h"
+#include "../Mob/FightableMob/Enemy/Enemy.h"
+#include "../NPC/NPC.h"
 class Map:public GameObject
 {
 public:
 	void setNextMap(Map*);
 	void setPreviousMap(Map*);
-	void addMonster(FightableMob*);
+	void addMonster(Enemy*);
+	void addNPC(NPC*);
 	Map* getNextMap();
 	Map* getPreviousMap();
-	vector<FightableMob*> getAllMob();
+	vector<NPC*> getAllNPC();
+	vector<Enemy*> getAllMob();
 	Map();
 private:
 	Map *nextMap;
 	Map* prevMap;
-	vector<FightableMob*> mobList;
+	vector<Enemy*> mobList;
+	vector<NPC*> NPCList;
 };
 

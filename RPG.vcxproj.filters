@@ -84,10 +84,28 @@
     <ClCompile Include="Utils\MapObjectGenerator\GameMapGenerator.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Wolf.cpp">
+    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Enemys\Wolf.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Bite.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\NPC\NPCs\Villager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Enemy.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Item\Item.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Item\Items\WolfFur.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Booty.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Item\Items\HealWater.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -164,13 +182,34 @@
     <ClInclude Include="Utils\MapObjectGenerator\GameMapGenerator.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Wolf.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys.h">
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys\Wolf.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Bite.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\NPC\NPCs\Villager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemy.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys\AllMonster.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Item.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\WolfFur.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\AllItems.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Booty.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\HealWater.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
