@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Bite.cpp" />
     <ClCompile Include="ControlCenter\Controller\AttackController.cpp" />
     <ClCompile Include="ControlCenter\ControlCenter.cpp" />
     <ClCompile Include="ControlCenter\Controller\FightController.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Wolf.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Bite.h" />
     <ClInclude Include="ControlCenter\Controller\AttackController.h" />
     <ClInclude Include="ControlCenter\ControlCenter.h" />
     <ClInclude Include="ControlCenter\Controller\FightController.h" />

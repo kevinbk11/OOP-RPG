@@ -15,9 +15,13 @@ public:
 	int getBasicDefenseValue();
 	vector<Skill*>* getSkills();
 	void setSkill(Skill*);
+	virtual void setSkillChoice();
+	void setSkillChoice(Skill);
+	void executeSkill(FightableMob*,Mob*);
 	friend class SkillEffect;
 protected:
 	int basicDamageValue = 0;
 	vector<Skill*>* skills = new vector<Skill*>();
+	Skill skillChoice;
 };
 

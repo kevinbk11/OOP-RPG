@@ -1,6 +1,6 @@
-#include "NormalAttack.h"
+ï»¿#include "NormalAttack.h"
 #include "../../SkillEffect/SkillEffects/HarmfulEffect.h"
 NormalAttack::NormalAttack() {
-	this->skillName = "´¶³q§ðÀ»";
-	this->setSkillEffect(new HarmfulEffect());
+	this->skillName = "æ™®é€šæ”»æ“Š";
+	this->setSkillEffect(new HarmfulEffect(1.0));
 }

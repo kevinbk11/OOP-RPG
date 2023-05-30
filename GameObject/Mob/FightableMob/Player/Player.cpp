@@ -1,23 +1,22 @@
 #include "Player.h"
+#include "../../../../ControlCenter/Controller.h"
 Player::Player(string name) {
 	this->name = name;
-}
-void Player::attack(Mob* mob) {
-	this->executeSkill(this,mob);
 }
 void Player::getAttack(DamageObject* damageObject) {
 	FightableMob::getAttack(damageObject);
 	cout << "ㄚㄚㄚㄚ阿a";
 }
-void Player::executeSkill(Player* player,Mob* mob) {
-	cout << this->name << "使用了" << this->skillChoice->skillName <<"。" << endl;
-	this->skillChoice->executeEffect(player, mob);
-}
-void Player::setSkillChoice(Skill* skill) {
-	this->skillChoice = skill;
-}
 void Player::setLocate(Map* map) {
 	this->locate = map;
+}
+void Player::respawn() {
+	cout <<endl<< "眼前一片黑暗，你回到了重生點。"<<endl;
+	this->hp = this->fullHp*0.1;
+	this->mp = this->fullMp * 0.1;
+	cout << this->hp << endl;
+	cout << this->mp << endl;
+	this->setLocate(ControlCenter::getInstance<GameController>()->getPlayerRespawnPoint());
 }
 Map* Player::getLocate() {
 	return this->locate;

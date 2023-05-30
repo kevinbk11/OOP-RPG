@@ -87,6 +87,9 @@
     <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Wolf.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Bite.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -165,6 +168,9 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Bite.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,5 +4,6 @@ class Wolf :public FightableMob
 {
 public:
 	Wolf();
+	void setSkillChoice();
 };
 

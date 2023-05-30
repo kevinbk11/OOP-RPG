@@ -6,5 +6,8 @@ class HarmfulEffect:public SkillEffect
 {
 public:
 	void execute(FightableMob*,Mob*);
+	HarmfulEffect(double);
+private:
+	double magnification;
 };
 

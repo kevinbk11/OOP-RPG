@@ -4,6 +4,6 @@
 class Fightable
 {
 public:
-	virtual void attack(Mob*);
+	virtual void attack(Mob*)=0;
 };
 

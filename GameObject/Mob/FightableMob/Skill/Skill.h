@@ -1,6 +1,6 @@
 #pragma once
 #include<string>
-class Player;
+class FightableMob;
 class Mob;
 class SkillEffect;
 class Skill
@@ -8,7 +8,7 @@ class Skill
 public:
 	std::string skillName;
 	void setSkillEffect(SkillEffect*);
-	void executeEffect(Player*,Mob*);
+	void executeEffect(FightableMob*, Mob*);
 private:
 	SkillEffect* effect=nullptr;
 };

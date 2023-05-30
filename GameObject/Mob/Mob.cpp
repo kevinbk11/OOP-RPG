@@ -7,5 +7,15 @@ void Mob::getAttack(DamageObject* damageObject) {
 	this->hp -= damage;
 }
 bool Mob::isLive() {
-	return this->hp >= 0;
+	return this->hp > 0;
+}
+int Mob::getHp() {
+	return this->hp;
+}
+int Mob::getMp() {
+	return this->mp;
+}
+void Mob::respawn() {
+	this->hp = this->fullHp;
+	this->mp = this->fullMp;
 }

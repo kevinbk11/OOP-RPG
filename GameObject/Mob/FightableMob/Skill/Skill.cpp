@@ -1,9 +1,9 @@
 #include "Skill.h"
 #include "SkillEffect/SkillEffect.h"
-#include "../Player/Player.h"
+#include "../FightableMob.h"
 void Skill::setSkillEffect(SkillEffect* effect) {
 	this->effect = effect;
 }
-void Skill::executeEffect(Player* player,Mob* mob) {
-	this->effect->execute(player,mob);
+void Skill::executeEffect(FightableMob* mob1, Mob* mob2) {
+	this->effect->execute(mob1, mob2);
 }

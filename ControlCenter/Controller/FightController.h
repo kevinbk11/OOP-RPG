@@ -1,5 +1,6 @@
 #pragma once
-#include "../../GameObject/Mob/FightableMob/Player/Player.h"
+#include "../../ControlCenter/Controller.h"
+#include "../../ControlCenter/ControlCenter.h"
 class FightController
 {
 public:
