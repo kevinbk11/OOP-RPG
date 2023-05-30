@@ -1,4 +1,4 @@
-#include "FightController.h"
+ï»¿#include "FightController.h"
 FightController* FightController::controller = nullptr;
 FightController::FightController() {
 	this->isPlayerTurn = true;
@@ -16,10 +16,10 @@ void FightController::fight(Player* player, FightableMob* mob){
 	this->isPlayerTurn = true;
 	while (player->isLive() && mob->isLive()) {
 		if (isPlayerTurn) {
-			cout << endl << "§Aªº¦å¶q:" << player->getHp() << endl;
-			cout << endl << "§AªºÅ]¶q:" << player->getMp() << endl;
-			cout << endl <<mob->name <<"ªº¦å¶q:" << mob->getHp() << endl;
-			cout <<endl<< "¿é¤J1¿ï¾Ü§ðÀ»¼Ò¦¡¡A¿é¤J2¿ï¾Ü¹D¨ã¡A¿é¤J3°k¶]¡C\n";
+			cout << endl << "ä½ çš„è¡€é‡:" << player->getHp() << endl;
+			cout << endl << "ä½ çš„é­”é‡:" << player->getMp() << endl;
+			cout << endl <<mob->name <<"çš„è¡€é‡:" << mob->getHp() << endl;
+			cout <<endl<< "è¼¸å…¥1é¸æ“‡æ”»æ“Šæ¨¡å¼ï¼Œè¼¸å…¥2é¸æ“‡é“å…·ï¼Œè¼¸å…¥3é€ƒè·‘ã€‚\n";
 			int command;
 			cin >> command;
 			system("cls");
@@ -31,7 +31,7 @@ void FightController::fight(Player* player, FightableMob* mob){
 				case 2:
 					break;
 				case 3:
-					cout << "°k¶]¦¨¥\¡C";
+					cout << "é€ƒè·‘æˆåŠŸã€‚";
 					return;
 			}
 		}
@@ -42,7 +42,7 @@ void FightController::fight(Player* player, FightableMob* mob){
 		isPlayerTurn = !isPlayerTurn;
 	}
 	system("cls");
-	cout <<endl<< "¾Ô°«µ²§ô¡C\n";
+	cout <<endl<< "æˆ°é¬¥çµæŸã€‚\n";
 	FightableMob* winner;
 	FightableMob* loser;
 	if (player->isLive()) {

@@ -1,4 +1,4 @@
-#include "GameController.h"
+ï»¿#include "GameController.h"
 GameController* GameController::controller = nullptr;
 GameController *GameController::getInstance() {
 	if (controller == nullptr) {
@@ -11,17 +11,17 @@ void GameController::initMap() {
 }
 void GameController::gameStart(Player* player) {
 	if (player == nullptr) {
-		cout << "Åª¨úª±®a¤¤¡C";
+		cout << "è®€å–çŽ©å®¶ä¸­ã€‚";
 		return;
 	}
-	cout << "¹CÀ¸¶}©l\n";
+	cout << "éŠæˆ²é–‹å§‹\n";
 	this->initMap();
 	player->setLocate(this->mapObject.getRespawnPoint());
 	while (true) {
-		cout <<"¿é¤J0«e©¹¤W¤@±i¦a¹Ï¡A¿é¤J1«e©¹¤U¤@±i¦a¹Ï¡A¿é¤J2¬d¬Ý¦¹³Bªº©Çª«¨Ã¿ï¾Ü­n¾Ô°«ªº©Çª«¡C\n";
+		cout <<"è¼¸å…¥0å‰å¾€ä¸Šä¸€å¼µåœ°åœ–ï¼Œè¼¸å…¥1å‰å¾€ä¸‹ä¸€å¼µåœ°åœ–ï¼Œè¼¸å…¥2æŸ¥çœ‹æ­¤è™•çš„æ€ªç‰©ä¸¦é¸æ“‡è¦æˆ°é¬¥çš„æ€ªç‰©ã€‚\n";
 		Map* locate = player->getLocate();
 		vector<FightableMob*> mobs = locate->getAllMob();
-		cout << "¥Ø«e©Ò¦b¦a:"<<locate->name<<endl;
+		cout << "ç›®å‰æ‰€åœ¨åœ°:"<<locate->name<<endl;
 		int command;
 		cin >> command;
 		system("cls");
@@ -34,11 +34,11 @@ void GameController::gameStart(Player* player) {
 				break;
 			}
 			case 2: {
-				if (mobs.size() == 0)cout << "³o¸Ì¨S¦³©Çª«¡C\n";
+				if (mobs.size() == 0)cout << "é€™è£¡æ²’æœ‰æ€ªç‰©ã€‚\n";
 				else {
-					cout << "½Ð¿é¤J©Çª«¥N½X¨Ó¶i¤J¾Ô°«¡C\n";
+					cout << "è«‹è¼¸å…¥æ€ªç‰©ä»£ç¢¼ä¾†é€²å…¥æˆ°é¬¥ã€‚\n";
 					for (int i = 0; i < mobs.size(); i++) {
-						cout << "©Çª«" << i + 1 << ":" << mobs[i]->name << endl;
+						cout << "æ€ªç‰©" << i + 1 << ":" << mobs[i]->name << endl;
 					}
 					cin >> command;
 					FightableMob *mob = mobs[command - 1];
@@ -49,7 +49,7 @@ void GameController::gameStart(Player* player) {
 			}
 		}
 	}
-	cout << "¹CÀ¸µ²§ô¡AÁÂÁÂ¹Cª±¡C\n";
+	cout << "éŠæˆ²çµæŸï¼Œè¬è¬éŠçŽ©ã€‚\n";
 }
 Map* GameController::getPlayerRespawnPoint() {
 	return this->mapObject.getRespawnPoint();

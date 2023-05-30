@@ -1,4 +1,4 @@
-#include "AttackController.h"
+ï»¿#include "AttackController.h"
 AttackController* AttackController::controller = nullptr;
 AttackController* AttackController::getInstance()
 {
@@ -19,7 +19,7 @@ void AttackController::choiceSkill(Player* player) {
 	}
 	cout << endl;
 	int command;
-	cout << "½Ð¿é¤J§Þ¯à½s¸¹¡C \n";
+	cout << "è«‹è¼¸å…¥æŠ€èƒ½ç·¨è™Ÿã€‚ \n";
 	cin >> command;
 	player->setSkillChoice(*(*(skills))[command - 1]);
 }

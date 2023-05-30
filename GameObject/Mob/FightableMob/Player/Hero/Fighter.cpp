@@ -1,4 +1,4 @@
-#include "Fighter.h"
+﻿#include "Fighter.h"
 #include "../../../../../ControlCenter/ControlCenter.h"
 Fighter::Fighter(string name):Player(name) {
 	this->fullHp = 100;

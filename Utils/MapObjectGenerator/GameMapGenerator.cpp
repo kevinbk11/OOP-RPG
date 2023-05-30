@@ -1,10 +1,10 @@
-#include "GameMapGenerator.h"
+ï»¿#include "GameMapGenerator.h"
 GameMap GameMapGenerator::generate() {
 	MapBuilder* builder = new MapBuilder();
 	vector<Map*> maps = vector<Map*>();
-	maps.push_back(builder->setName("ªì¤ßÂí")
+	maps.push_back(builder->setName("åˆå¿ƒé®")
 		->createMap());
-	maps.push_back(builder->setName("¯ó­ì1")
+	maps.push_back(builder->setName("è‰åŸ1")
 		->setMonster(new Wolf())
 		->createMap());
 	MapLinker* linker = new MapLinker();

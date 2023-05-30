@@ -1,17 +1,17 @@
-#include "Player.h"
+ï»¿#include "Player.h"
 #include "../../../../ControlCenter/Controller.h"
 Player::Player(string name) {
 	this->name = name;
 }
 void Player::getAttack(DamageObject* damageObject) {
 	FightableMob::getAttack(damageObject);
-	cout << "£«£«£«£«ªüa";
+	cout << "ã„šã„šã„šã„šé˜¿a";
 }
 void Player::setLocate(Map* map) {
 	this->locate = map;
 }
 void Player::respawn() {
-	cout <<endl<< "²´«e¤@¤ù¶Â·t¡A§A¦^¨ì¤F­«¥ÍÂI¡C"<<endl;
+	cout <<endl<< "çœ¼å‰ä¸€ç‰‡é»‘æš—ï¼Œä½ å›žåˆ°äº†é‡ç”Ÿé»žã€‚"<<endl;
 	this->hp = this->fullHp*0.1;
 	this->mp = this->fullMp * 0.1;
 	cout << this->hp << endl;
