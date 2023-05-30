@@ -13,7 +13,7 @@ public:
 	virtual void getAttack(DamageObject* damageObject);
 	int getBasicDamageValue();
 	int getBasicDefenseValue();
-	vector<Skill*>* getSkills();
+	vector<Skill*> getSkills();
 	void setSkill(Skill*);
 	virtual void setSkillChoice();
 	void setSkillChoice(Skill);
@@ -21,7 +21,7 @@ public:
 	friend class SkillEffect;
 protected:
 	int basicDamageValue = 0;
-	vector<Skill*>* skills = new vector<Skill*>();
+	vector<Skill*> skills = vector<Skill*>();
 	Skill skillChoice;
 };
 

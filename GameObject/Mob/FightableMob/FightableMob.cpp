@@ -14,11 +14,11 @@ void FightableMob::getAttack(DamageObject* damageObject) {
 	cout << endl<< this->name << "³Q¥´¤F" << damageObject->getDamageValue() << "¶Ë®`¡C\n";
 	Mob::getAttack(damageObject);
 }
-vector<Skill*>* FightableMob::getSkills() {
+vector<Skill*> FightableMob::getSkills() {
 	return this->skills;
 }
 void FightableMob::setSkill(Skill* skill) {
-	this->skills->push_back(skill);
+	this->skills.push_back(skill);
 }
 void FightableMob::setSkillChoice(Skill skill) {
 	this->skillChoice = skill;

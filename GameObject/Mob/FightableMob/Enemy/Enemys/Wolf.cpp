@@ -11,7 +11,8 @@ Wolf::Wolf() {
 	this->exp = 5;
 	this->money = 10;
 	this->items.push_back(WolfFur(1));
+	this->setSkill(new Bite());
 }
 void Wolf::setSkillChoice() {
-	this->skillChoice = Bite();
+	this->skillChoice = *(skills[0]);
 }

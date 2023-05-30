@@ -13,5 +13,6 @@ protected:
 	int exp;
 	int money;
 	vector<Item> items;
+	Booty* booty = new Booty();
 };
 

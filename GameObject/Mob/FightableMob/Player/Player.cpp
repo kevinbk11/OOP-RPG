@@ -21,7 +21,6 @@ void Player::getMonsterBooty(Enemy* enemy) {
 	Booty *booty = enemy->dropBooty();
 	this->addExp(booty->exp);
 	this->money += booty->money;
-
 	cout << "獲得了" << booty->money << "元\n";
 	cout << "獲得了" << booty->exp << "點經驗"<<endl;
 	for (int i = 0; i < booty->items.size(); i++) {

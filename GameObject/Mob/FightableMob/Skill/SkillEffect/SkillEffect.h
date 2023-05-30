@@ -3,6 +3,6 @@
 class SkillEffect
 {
 public:
-	virtual void execute(FightableMob*, Mob*)=0;
+	virtual void execute(FightableMob*, Mob*);
 };
 

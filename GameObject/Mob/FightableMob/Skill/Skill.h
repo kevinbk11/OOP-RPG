@@ -10,6 +10,6 @@ public:
 	void setSkillEffect(SkillEffect*);
 	void executeEffect(FightableMob*, Mob*);
 private:
-	SkillEffect* effect=nullptr;
+	SkillEffect* effect;
 };
 
