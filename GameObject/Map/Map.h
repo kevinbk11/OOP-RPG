@@ -3,6 +3,7 @@
 #include<vector>
 #include "../Mob/FightableMob/Enemy/Enemy.h"
 #include "../NPC/NPC.h"
+class NPC;
 class Map:public GameObject
 {
 public:

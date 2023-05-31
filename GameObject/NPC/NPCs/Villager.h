@@ -4,6 +4,5 @@ class Villager :public NPC
 {
 public:
 	Villager();
-	void talk();
 };
 

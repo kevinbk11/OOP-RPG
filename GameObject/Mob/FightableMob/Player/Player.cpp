@@ -24,8 +24,8 @@ void Player::getMonsterBooty(Enemy* enemy) {
 	cout << "獲得了" << booty->money << "元\n";
 	cout << "獲得了" << booty->exp << "點經驗"<<endl;
 	for (int i = 0; i < booty->items.size(); i++) {
-		cout << "獲得了" << booty->items[i].name << booty->items[i].getCount()<<"個\n";
-		this->putItemIntoBag(&(booty->items[i]));
+		cout << "獲得了" << booty->items[i]->name << booty->items[i]->getCount()<<"個\n";
+		this->putItemIntoBag((booty->items[i]));
 	}
 	cout << endl;
 }
@@ -54,13 +54,14 @@ void Player::printDetails() {
 	cout << endl;
 	this->printBag();
 }
-void Player::putItemIntoBag(Item *item) {
+void Player::putItemIntoBag(Item* item) {
 	for (int i = 0; i < bag.size(); i++) {
 		if (bag[i]->name == item->name) {
 			bag[i]->addCount(item->getCount());
+			delete item;
 			return;
 		}
-	}
+		}
 	bag.push_back(item);
 }
 bool Player::printBag() {
@@ -80,9 +81,10 @@ bool Player::printBag() {
 bool Player::useItem(int index) {
 	return this->bag[index]->use(this);
 }
-void Player::removeItem(Item* item) {
+void Player::removeItem(Item *item) {
 	for (int i = 0; i < this->bag.size(); i++) {
 		if (this->bag[i]->name == item->name) {
+			cout << this->bag[i]->name;
 			this->bag.erase(bag.begin() + i);
 			return;
 		}

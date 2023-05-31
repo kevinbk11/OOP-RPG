@@ -24,6 +24,7 @@ int main()
             player = creater->createPlayer(name, command);
             system("cls");
             gameController->gameStart(player);
+            
             break;
         }
         case 1: {

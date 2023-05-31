@@ -11,8 +11,8 @@ public:
 	FightableMob();
 	virtual void attack(Mob*);
 	virtual void getAttack(DamageObject* damageObject);
-	int getBasicDamageValue();
-	int getBasicDefenseValue();
+	float getBasicDamageValue();
+	float getBasicDefenseValue();
 	vector<Skill*> getSkills();
 	void setSkill(Skill*);
 	virtual void setSkillChoice();
@@ -20,8 +20,9 @@ public:
 	void executeSkill(FightableMob*,Mob*);
 	friend class SkillEffect;
 protected:
-	int basicDamageValue = 0;
+	float basicDamageValue = 0;
 	vector<Skill*> skills = vector<Skill*>();
 	Skill skillChoice;
+	void initDamageValue(float);
 };
 

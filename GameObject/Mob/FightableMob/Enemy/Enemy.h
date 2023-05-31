@@ -10,9 +10,7 @@ class Enemy:public FightableMob
 public:
 	Booty *dropBooty();
 protected:
-	int exp;
-	int money;
-	vector<Item> items;
 	Booty* booty = new Booty();
+	virtual void setBootyItems()=0;
 };
 

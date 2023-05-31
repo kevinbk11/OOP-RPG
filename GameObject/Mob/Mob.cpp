@@ -1,5 +1,5 @@
 #include "Mob.h"
-int Mob::getBasicDefenseValue() {
+float Mob::getBasicDefenseValue() {
 	return this->basicDefenseValue;
 }
 void Mob::getAttack(DamageObject* damageObject) {
@@ -24,4 +24,15 @@ void Mob::addHp(int value) {
 }
 void Mob::addMp(int value) {
 	this->mp = this->mp + value < this->fullMp ? this->mp + value : this->fullMp;
+}
+void Mob::initHp(int value) {
+	this->fullHp = value;
+	this->hp = fullHp;
+}
+void Mob::initMp(int value) {
+	this->fullMp = value;
+	this->mp = fullMp;
+}
+void Mob::initDefenseValue(float value) {
+	this->basicDefenseValue = value;
 }

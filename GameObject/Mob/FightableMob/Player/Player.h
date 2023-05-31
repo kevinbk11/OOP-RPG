@@ -2,6 +2,7 @@
 #include "../Enemy/Enemy.h"
 #include "../../../Map/Map.h"
 class Skill;
+class Map;
 class Player:public FightableMob
 {
 
@@ -19,13 +20,13 @@ public:
 	Map* getLocate();
 protected:
 	int money;
+	int level = 1;
 	void addExp(int);
 	bool isLevelUp();
 	virtual void levelUp();
 private:
 
 	vector <Item*> bag;
-	int level = 1;
 	int nowExp = 0;
 	int neededExp = 10;
 	Map* locate = nullptr;

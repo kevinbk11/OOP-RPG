@@ -127,7 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Utils\DialogObject.cpp" />
     <ClCompile Include="GameObject\Item\Items\HealWater.cpp" />
+    <ClCompile Include="ControlCenter\Controller\InteractiveController.cpp" />
     <ClCompile Include="Utils\Booty.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Enemy.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Bite.cpp" />
@@ -160,7 +162,9 @@
     <ClCompile Include="GameObject\Item\Items\WolfFur.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Utils\DialogObject.h" />
     <ClInclude Include="GameObject\Item\Items\HealWater.h" />
+    <ClInclude Include="ControlCenter\Controller\InteractiveController.h" />
     <ClInclude Include="Utils\Booty.h" />
     <ClInclude Include="GameObject\Item\Items\AllItems.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemy.h" />

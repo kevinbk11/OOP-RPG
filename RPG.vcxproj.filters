@@ -108,6 +108,12 @@
     <ClCompile Include="GameObject\Item\Items\HealWater.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="ControlCenter\Controller\InteractiveController.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\DialogObject.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -210,6 +216,12 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Item\Items\HealWater.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlCenter\Controller\InteractiveController.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\DialogObject.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

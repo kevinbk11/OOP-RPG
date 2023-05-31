@@ -6,6 +6,6 @@ class Booty
 public:
 	int exp;
 	int money;
-	vector<Item> items;
+	vector<Item*> items;
 };
 

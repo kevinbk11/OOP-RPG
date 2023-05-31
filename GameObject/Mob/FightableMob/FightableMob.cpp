@@ -1,10 +1,10 @@
 #include "FightableMob.h"
 FightableMob::FightableMob() {
 }
-int FightableMob::getBasicDamageValue() {
+float FightableMob::getBasicDamageValue() {
 	return this->basicDamageValue;
 }
-int FightableMob::getBasicDefenseValue() {
+float FightableMob::getBasicDefenseValue() {
 	return this->basicDefenseValue;
 }
 void FightableMob::attack(Mob* mob) {
@@ -27,4 +27,8 @@ void FightableMob::setSkillChoice() { }
 void FightableMob::executeSkill(FightableMob* mob1, Mob* mob2) {
 	cout << endl << this->name << "¨Ï¥Î¤F" << this->skillChoice.skillName << "¡C" << endl;
 	this->skillChoice.executeEffect(mob1, mob2);
+
+}
+void FightableMob::initDamageValue(float value) {
+	this->basicDamageValue = value;
 }

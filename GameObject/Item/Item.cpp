@@ -1,4 +1,7 @@
 #include "Item.h"
+Item::Item(int count) {
+	this->count = count;
+}
 int Item::getCount() {
 	return this->count;
 }

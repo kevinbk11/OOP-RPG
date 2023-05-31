@@ -13,6 +13,6 @@ public:
 	void setPlayerRespawnPoint(Map*);
 private:
 	static GameController* controller;
-	GameMap mapObject;
+	GameMap* mapObject;
 };
 

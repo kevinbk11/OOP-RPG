@@ -16,7 +16,7 @@ void GameController::gameStart(Player* player) {
 	}
 	cout << "遊戲開始\n";
 	this->initMap();
-	player->setLocate(this->mapObject.getRespawnPoint());
+	player->setLocate(this->mapObject->getRespawnPoint());
 	while (true) {
 		cout <<"輸入0前往上一張地圖\n\n輸入1前往下一張地圖\n\n";
 		cout << "輸入2查看此處的怪物並選擇要戰鬥的怪物\n\n輸入3查看此處的NPC並選擇要對話的NPC\n\n";
@@ -65,7 +65,8 @@ void GameController::gameStart(Player* player) {
 					}
 					cin >> command;
 					system("cls");
-					NPCs[command - 1]->talk();
+					InteractiveController* controller = ControlCenter::getInstance<InteractiveController>();
+					controller->interactive(player, NPCs[command - 1]);
 					cout << endl;
 				}
 				break;
@@ -79,8 +80,8 @@ void GameController::gameStart(Player* player) {
 	cout << "遊戲結束，謝謝遊玩。\n";
 }
 Map* GameController::getPlayerRespawnPoint() {
-	return this->mapObject.getRespawnPoint();
+	return this->mapObject->getRespawnPoint();
 }
 void GameController::setPlayerRespawnPoint(Map* map) {
-	this->mapObject.setRespawnPoint(map);
+	this->mapObject->setRespawnPoint(map);
 }

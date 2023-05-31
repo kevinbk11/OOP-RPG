@@ -6,7 +6,7 @@ class Mob : public GameObject
 {
 public:
 	virtual void getAttack(DamageObject*) = 0;
-	int getBasicDefenseValue();
+	float getBasicDefenseValue();
 	bool isLive();
 	int getHp();
 	int getMp();
@@ -18,6 +18,10 @@ protected:
 	int mp;
 	int fullHp;
 	int fullMp;
-	int basicDefenseValue = 0;
+	float basicDefenseValue = 0;
+	void initHp(int);
+	void initMp(int);
+	void initDefenseValue(float);
+
 };
 

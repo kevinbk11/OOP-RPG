@@ -6,6 +6,6 @@
 class GameMapGenerator
 {
 public:
-	static GameMap generate();
+	static GameMap* generate();
 };
 

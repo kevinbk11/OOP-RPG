@@ -4,6 +4,7 @@ class Player;
 class Item:public GameObject
 {
 public:
+	Item(int);
 	void printDetails();
 	int getCount();
 	void addCount(int);
