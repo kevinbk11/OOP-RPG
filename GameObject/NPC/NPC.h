@@ -1,6 +1,6 @@
 #pragma once
 #include "../GameObject.h"
-#include "../../Utils/DialogObject.h"
+#include "../../Utils/Dialog/DialogObject.h"
 class DialogObject;
 class Player;
 class NPC : public GameObject

@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Utils\DialogObject.cpp" />
+    <ClCompile Include="GameObject\Task\Task.cpp" />
+    <ClCompile Include="GameObject\Task\Tasks\Task1.cpp" />
+    <ClCompile Include="Utils\TaskChecker.cpp" />
+    <ClCompile Include="Utils\Dialog\TaskDialogObject.cpp" />
+    <ClCompile Include="Utils\Dialog\DialogObject.cpp" />
     <ClCompile Include="GameObject\Item\Items\HealWater.cpp" />
     <ClCompile Include="ControlCenter\Controller\InteractiveController.cpp" />
     <ClCompile Include="Utils\Booty.cpp" />
@@ -162,7 +166,11 @@
     <ClCompile Include="GameObject\Item\Items\WolfFur.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utils\DialogObject.h" />
+    <ClInclude Include="GameObject\Task\Task.h" />
+    <ClInclude Include="GameObject\Task\Tasks\Task1.h" />
+    <ClInclude Include="Utils\TaskChecker.h" />
+    <ClInclude Include="Utils\Dialog\TaskDialogObject.h" />
+    <ClInclude Include="Utils\Dialog\DialogObject.h" />
     <ClInclude Include="GameObject\Item\Items\HealWater.h" />
     <ClInclude Include="ControlCenter\Controller\InteractiveController.h" />
     <ClInclude Include="Utils\Booty.h" />

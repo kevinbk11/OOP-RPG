@@ -111,7 +111,19 @@
     <ClCompile Include="ControlCenter\Controller\InteractiveController.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="Utils\DialogObject.cpp">
+    <ClCompile Include="Utils\Dialog\DialogObject.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Dialog\TaskDialogObject.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Task\Task.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Task\Tasks\Task1.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\TaskChecker.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -221,7 +233,19 @@
     <ClInclude Include="ControlCenter\Controller\InteractiveController.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Utils\DialogObject.h">
+    <ClInclude Include="Utils\Dialog\DialogObject.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Dialog\TaskDialogObject.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Task\Task.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Task\Tasks\Task1.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\TaskChecker.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿#include "GameController.h"
+#include <fstream>
 GameController* GameController::controller = nullptr;
 GameController *GameController::getInstance() {
 	if (controller == nullptr) {

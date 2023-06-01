@@ -1,9 +1,9 @@
 ﻿#include "Player.h"
 #include "../../../../ControlCenter/Controller.h"
+#include "../../../../Utils/TaskChecker.h"
 Player::Player(string name) {
 	this->name = name;
 	this->bag = vector<Item*>();
-	this->putItemIntoBag(new HealWater(5));
 }
 void Player::getAttack(DamageObject* damageObject) {
 	FightableMob::getAttack(damageObject);
@@ -17,8 +17,7 @@ void Player::respawn() {
 	this->mp = this->fullMp * 0.1;
 	this->setLocate(ControlCenter::getInstance<GameController>()->getPlayerRespawnPoint());
 }
-void Player::getMonsterBooty(Enemy* enemy) {
-	Booty *booty = enemy->dropBooty();
+void Player::getBooty(Booty* booty) {
 	this->addExp(booty->exp);
 	this->money += booty->money;
 	cout << "獲得了" << booty->money << "元\n";
@@ -58,10 +57,16 @@ void Player::putItemIntoBag(Item* item) {
 	for (int i = 0; i < bag.size(); i++) {
 		if (bag[i]->name == item->name) {
 			bag[i]->addCount(item->getCount());
+			for (auto& it : this->tasks) {
+				if (TaskProcessor::check(it, *bag[i])) {
+					cout << "\n任務「" << it->name << "」完成。\n\n";
+					it->isSolved = true;
+				}
+			}
 			delete item;
 			return;
 		}
-		}
+	}
 	bag.push_back(item);
 }
 bool Player::printBag() {
@@ -90,7 +95,17 @@ void Player::removeItem(Item *item) {
 		}
 	}
 }
+void Player::acceptTask(Task *task) {
+	this->tasks.push_back(task);
+}
 Map* Player::getLocate() {
 	return this->locate;
 }
-
+vector<Task*> Player::getTasks() {
+	return this->tasks;
+}
+void Player::solveTask(Task* task) {
+	for (Item* item : this->bag) {
+		item->drop(task->requireItems[item->name]);
+	}
+}

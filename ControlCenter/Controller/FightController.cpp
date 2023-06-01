@@ -1,4 +1,5 @@
 ﻿#include "FightController.h"
+#include "../../Utils/TaskChecker.h"
 FightController* FightController::controller = nullptr;
 FightController::FightController() {
 	this->isPlayerTurn = true;
@@ -42,7 +43,6 @@ void FightController::fight(Player* player, Enemy* mob){
 					while (!player->useItem(command - 1)) {
 						cin >> command;
 					}
-
 					break;
 				case 3:
 					cout << "逃跑成功。";
@@ -57,8 +57,9 @@ void FightController::fight(Player* player, Enemy* mob){
 	}
 	system("cls");
 	cout <<endl<< "戰鬥結束。\n";
-	if (player->isLive()) {
-		player->getMonsterBooty(mob);
+	if (player->isLive()) {	
+		TaskProcessor::update(player->getTasks(), mob->name);
+		player->getBooty(mob->dropBooty());
 	}
 	else {
 		player->respawn();

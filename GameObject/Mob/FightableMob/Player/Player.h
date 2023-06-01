@@ -1,8 +1,10 @@
 #pragma once
 #include "../Enemy/Enemy.h"
 #include "../../../Map/Map.h"
+#include "../../../Task/Task.h"
 class Skill;
 class Map;
+class Task;
 class Player:public FightableMob
 {
 
@@ -10,13 +12,16 @@ public:
 	Player(string name);
 	void getAttack(DamageObject* damageObject);
 	void setLocate(Map*);
-	void getMonsterBooty(Enemy*);
+	void getBooty(Booty*);
 	void respawn();
 	void printDetails();
 	bool printBag();
 	bool useItem(int);
 	void putItemIntoBag(Item*);
 	void removeItem(Item*);
+	void acceptTask(Task*);
+	void solveTask(Task*);
+	vector<Task*> getTasks();
 	Map* getLocate();
 protected:
 	int money;
@@ -24,6 +29,7 @@ protected:
 	void addExp(int);
 	bool isLevelUp();
 	virtual void levelUp();
+	vector<Task*> tasks;
 private:
 
 	vector <Item*> bag;

@@ -19,12 +19,11 @@ int main()
             cout << "請輸入你的職業代碼，1為戰士，2為法師。\n";
             cin >> command;
             CreateHeroController* creater = nullptr;
-            Player* player;
+            Player* player=nullptr;
             creater = ControlCenter::getInstance<CreateHeroController>();
             player = creater->createPlayer(name, command);
             system("cls");
             gameController->gameStart(player);
-            
             break;
         }
         case 1: {
