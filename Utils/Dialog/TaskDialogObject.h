@@ -3,13 +3,12 @@
 class TaskDialogObject :public DialogObject
 {
 public:
-	TaskDialogObject(DialogObject*, int);
+	TaskDialogObject(Task*);
 	TaskDialogObject *setSolved(string);
 	TaskDialogObject *setNotSolved(string);
 	TaskDialogObject* setAfterSolved(string);
-	TaskDialogObject* setTask(Task*);
-	TaskDialogObject* setEndOptoinalStringValue(string);
-	TaskDialogObject* setOptionalStringValue(string);
+	TaskDialogObject* setEndOptionalStringValue(string);
+	TaskDialogObject* setNextDialogObject(DialogObject*);
 	void execute(Player*, NPC*)override;
 private:
 	string solved;
@@ -17,6 +16,6 @@ private:
 	string afterSolved;
 	string end;
 	Task* task;
-	DialogObject* parent;
+	DialogObject* nextDialogObject;
 };
 

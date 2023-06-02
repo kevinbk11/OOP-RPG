@@ -6,9 +6,6 @@ HealWater::HealWater(int count):Item(count) {
 }
 bool HealWater::use(Player* player) {
 	player->addHp(100);
-	this->drop(1);
-	if (this->count == 0) {
-		player->removeItem(this);
-	}
+	player->removeItem(this,1);
 	return true;
 }

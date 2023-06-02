@@ -18,7 +18,7 @@ public:
 	bool printBag();
 	bool useItem(int);
 	void putItemIntoBag(Item*);
-	void removeItem(Item*);
+	void removeItem(Item*,int count=-1);
 	void acceptTask(Task*);
 	void solveTask(Task*);
 	vector<Task*> getTasks();

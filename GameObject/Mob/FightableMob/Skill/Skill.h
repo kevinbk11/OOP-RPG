@@ -1,8 +1,10 @@
 #pragma once
 #include<string>
+
 class FightableMob;
 class Mob;
 class SkillEffect;
+
 class Skill
 {
 public:

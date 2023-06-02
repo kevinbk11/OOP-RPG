@@ -21,5 +21,6 @@ protected:
 	vector<DialogObject*> nextState;
 	int pathIndex;
 	bool haveTask=false;
+	DialogObject* parent;
 };
 

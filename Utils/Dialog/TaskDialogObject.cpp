@@ -1,7 +1,8 @@
 #include "TaskDialogObject.h"
-TaskDialogObject::TaskDialogObject(DialogObject* parent,int index) {
-	this->parent = parent;
-	this->pathIndex = index-1;
+TaskDialogObject::TaskDialogObject(Task* task) {
+	this->task = task;
+	this->sentence = "提交任務:"+this->task->name;
+	this->nextDialogObject = nullptr;
 	this->haveTask=true;
 }
 TaskDialogObject* TaskDialogObject::setAfterSolved(string sentence) {
@@ -16,38 +17,36 @@ TaskDialogObject* TaskDialogObject::setSolved(string sentence) {
 	this->solved = sentence;
 	return this;
 }
-TaskDialogObject* TaskDialogObject::setTask(Task* task) {
-	this->task = task;
-	return this;
-}
-TaskDialogObject* TaskDialogObject::setOptionalStringValue(string sentence) {
-	this->sentence = sentence;
-	return this;
-}
 
-TaskDialogObject* TaskDialogObject::setEndOptoinalStringValue(string sentence) {
+TaskDialogObject* TaskDialogObject::setEndOptionalStringValue(string sentence) {
 	this->end = sentence;
+	return this;
+}
+TaskDialogObject* TaskDialogObject::setNextDialogObject(DialogObject* dialog) {
+	this->nextDialogObject = dialog;
 	return this;
 }
 void TaskDialogObject::execute(Player* player,NPC* npc) {
 	if (!this->task->isAccepted && !this->task->isSolved) {
 		cout << "已接受「" << this->task->name << "」任務。\n\n";
 		this->task->isAccepted = true;
-		this->parent->respond[this->pathIndex] = this->sentence;
+		this->parent->respond[this->pathIndex-1] = this->sentence;
 		player->acceptTask(this->task);	
 	}
 	else {
+		system("cls");
+		cout << npc->name << ":";
 		if (this->task->isAccepted && this->task->isSolved)/*交差*/ {
 			this->task->isAccepted = false;
 			cout << this->solved << endl << endl;
-			this->parent->respond[this->pathIndex] = this->end;
+			this->parent->respond[this->pathIndex-1] = this->end;
 			player->getBooty(this->task->getPrize());
 			player->solveTask(this->task);
 			delete this->task->getPrize();
 		}
 		else if (!this->task->isAccepted && this->task->isSolved)/*已經交差過了*/ {
 			cout << this->afterSolved << endl << endl;
-
+			if (this->nextDialogObject != nullptr)this->nextDialogObject->execute(player, npc);
 		}
 		else {
 			cout << this->notSolved << endl << endl;

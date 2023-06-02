@@ -43,13 +43,21 @@ void GameController::gameStart(Player* player) {
 				vector<Enemy*> mobs = locate->getAllMob();
 				if (mobs.size() == 0)cout << "這裡沒有怪物。\n";
 				else {
-					cout << "請輸入怪物代碼來進入戰鬥。\n";
+					cout << "請輸入怪物代碼來進入戰鬥，或者輸入0來離開。\n";
 					for (int i = 0; i < mobs.size(); i++) {
 						cout << "怪物" << i + 1 << ":" << mobs[i]->name << endl;
 					}
-					cin >> command;
-					system("cls");
-					Enemy *mob = mobs[command - 1];
+					Enemy* mob=nullptr;
+					do {
+						cin >> command;
+						if (command <= 0)break;
+						try { mob = mobs.at(command - 1); break; }
+						catch (exception) { 
+							cout << "不存在的怪物。\n";
+							continue; 
+						}
+					} while (true);
+					if (mob == nullptr)continue;
 					FightController *controller = ControlCenter::getInstance<FightController>();
 					controller->fight(player, mob);
 					cout << endl;
@@ -60,14 +68,24 @@ void GameController::gameStart(Player* player) {
 				vector<NPC*> NPCs = locate->getAllNPC();
 				if (NPCs.size() == 0)cout << "這裡沒有NPC。\n";
 				else {
-					cout << "請輸入NPC代碼來進入對話。\n";
+					cout << "請輸入NPC代碼來進入對話。，或者輸入0返回\n";
 					for (int i = 0; i < NPCs.size(); i++) {
 						cout << "NPC." << i + 1 << ":" << NPCs[i]->name << endl;
 					}
-					cin >> command;
+					NPC* npc=nullptr;
+					do {
+						cin >> command;
+						if (command <= 0)break;
+						try { npc = NPCs.at(command-1); break; }
+						catch (exception) {
+							cout << "不存在的NPC。\n";
+							continue;
+						}
+					} while (true);
+					if (npc == nullptr)continue;
 					system("cls");
 					InteractiveController* controller = ControlCenter::getInstance<InteractiveController>();
-					controller->interactive(player, NPCs[command - 1]);
+					controller->interactive(player, npc);
 					cout << endl;
 				}
 				break;

@@ -16,7 +16,7 @@ DialogObject* DialogObject::addOptional(string sentence,string respond) {
 }
 void DialogObject::execute(Player* player,NPC* npc) {
 	system("cls");
-	cout << npc->name<<":" << this->sentence << endl << endl;
+	if(this->sentence!="")cout << npc->name << ":" << this->sentence << endl << endl;
 	if (this->disconnectPoint != nullptr) {
 		if (this->forReplaceDialog->haveTask)this->forReplaceDialog->execute(player,npc);//為了接任務
 		this->setOptionalDialog();
@@ -28,8 +28,18 @@ void DialogObject::execute(Player* player,NPC* npc) {
 			cout << i + 1 << "." << this->respond[i] << endl;
 		}
 		int choice;
-		cin >> choice;
-		cout << player->name << ":" << this->respond[choice - 1] << endl << endl;
+		while (cin >> choice) {
+			try {
+				this->nextState.at(choice - 1);
+				break;
+			}
+			catch (exception){
+				cout << "請輸入正確的代號。\n";
+				continue;
+			}
+		}
+
+		if(!this->nextState[choice - 1]->haveTask)cout << player->name << ":" << this->respond[choice - 1] << endl << endl;
 		this->nextState[choice - 1]->execute(player, npc);
 	}
 }
@@ -38,8 +48,9 @@ void DialogObject::setDisconnectPoint(DialogObject* connectPoint,DialogObject* d
 	this->disconnectPoint = connectPoint;
 	this->forReplaceDialog = dialog;
 	this->pathIndex = index;
+	this->forReplaceDialog->parent = connectPoint;
+	this->forReplaceDialog->pathIndex = index;
 }
 void DialogObject::setOptionalDialog() {
-	delete this->disconnectPoint->nextState[this->pathIndex - 1];
-	this->disconnectPoint->nextState[this->pathIndex-1] = this->forReplaceDialog;
+	this->disconnectPoint->nextState[this->pathIndex - 1] = this->forReplaceDialog;
 }

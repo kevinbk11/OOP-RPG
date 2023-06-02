@@ -35,18 +35,21 @@ void FightController::fight(Player* player, Enemy* mob){
 						continue;
 					}
 					cout << "請輸入你要使用的道具，輸入0返回。\n";
-					cin >> command;
-					if (command == 0) {
-						system("cls");
-						continue;
-					}
-					while (!player->useItem(command - 1)) {
+					do {
 						cin >> command;
-					}
+						if (command == 0) {
+							system("cls");
+							break;
+						}
+					} while (!player->useItem(command - 1));
+					if (command == 0)continue;
 					break;
 				case 3:
-					cout << "逃跑成功。";
+					cout << "逃跑成功。\n";
 					return;
+				default:
+					cout << "錯誤!\n";
+					continue;
 			}
 		}
 		else {

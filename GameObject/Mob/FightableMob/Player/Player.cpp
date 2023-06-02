@@ -84,13 +84,23 @@ bool Player::printBag() {
 	}
 }
 bool Player::useItem(int index) {
-	return this->bag[index]->use(this);
+	try {
+		return this->bag.at(index)->use(this);
+	}
+	catch (exception) {
+		cout << "錯誤。";
+		return false;
+	}
+
 }
-void Player::removeItem(Item *item) {
+void Player::removeItem(Item *item,int count) {
 	for (int i = 0; i < this->bag.size(); i++) {
 		if (this->bag[i]->name == item->name) {
-			cout << this->bag[i]->name;
-			this->bag.erase(bag.begin() + i);
+			if(count==-1)this->bag.erase(bag.begin() + i);
+			else {
+				this->bag[i]->drop(count);
+				if (this->bag[i]->getCount() == 0)this->bag.erase(bag.begin() + i);
+			}
 			return;
 		}
 	}
@@ -106,6 +116,11 @@ vector<Task*> Player::getTasks() {
 }
 void Player::solveTask(Task* task) {
 	for (Item* item : this->bag) {
-		item->drop(task->requireItems[item->name]);
+		for (auto& pair : task->requireItems) {
+			if (item->name == pair.first) {
+				this->removeItem(item, pair.second);
+				break;
+			}
+		}
 	}
 }
