@@ -30,7 +30,7 @@ void FightController::fight(Player* player, Enemy* mob){
 					attackController->attack(player, mob);
 					break;
 				case 2:
-					if (!player->printBag()) {
+					if (!player->printBag(0)) {
 						system("cls");
 						continue;
 					}
@@ -41,8 +41,9 @@ void FightController::fight(Player* player, Enemy* mob){
 							system("cls");
 							break;
 						}
-					} while (!player->useItem(command - 1));
+					} while (!player->useItem(command - 1,0));
 					if (command == 0)continue;
+					attackController->executeDamageCalculate(player, mob);
 					break;
 				case 3:
 					cout << "逃跑成功。\n";

@@ -1,8 +1,17 @@
 #pragma once
 #include "../../FightableMob.h"
+class FightableMob;
+class Mob;
 class SkillEffect
 {
 public:
-	virtual void execute(FightableMob*, Mob*);
+	int continous;
+	int times;
+	virtual float calculateDamage(FightableMob*, Mob*)=0;
+	void execute(float, Mob* target);
+	int effectState;
+	enum class STATE {
+		BURING = 1,
+	};
 };
 

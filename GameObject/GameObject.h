@@ -5,5 +5,6 @@ class GameObject
 {
 public:
 	string name;
+	string getName();
 };
 

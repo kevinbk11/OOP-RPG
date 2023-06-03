@@ -3,7 +3,8 @@
 #include "../../../../Utils/TaskChecker.h"
 Player::Player(string name) {
 	this->name = name;
-	this->bag = vector<Item*>();
+	this->bag.push_back(vector <Item*>());//道具背包
+	this->bag.push_back(vector<Item*>());//裝備背包
 }
 void Player::getAttack(DamageObject* damageObject) {
 	FightableMob::getAttack(damageObject);
@@ -50,15 +51,21 @@ void Player::printDetails() {
 	cout << "玩家等級:" << this->level << endl;
 	cout << "玩家經驗值:" << this->nowExp<<"/"<<this->neededExp << endl;
 	cout << "玩家金幣:" << this->money << "元\n";
+	cout << "手持武器:";
+	if (this->weapon != nullptr)cout << this->weapon->getName();
+	else cout << "無";
 	cout << endl;
-	this->printBag();
+	cout << "當前攻擊力:" << this->basicDamageValue << endl;
+	cout << "當前防禦力:" << this->basicDefenseValue << endl;
+	cout << endl;
 }
 void Player::putItemIntoBag(Item* item) {
-	for (int i = 0; i < bag.size(); i++) {
-		if (bag[i]->name == item->name) {
-			bag[i]->addCount(item->getCount());
+	int type = item->type;
+	for (int i = 0; i < bag[type].size(); i++) {
+		if (bag[type][i]->name == item->name) {
+			bag[type][i]->addCount(item->getCount());
 			for (auto& it : this->tasks) {
-				if (TaskProcessor::check(it, *bag[i])) {
+				if (TaskProcessor::check(it, *bag[type][i])) {
 					cout << "\n任務「" << it->name << "」完成。\n\n";
 					it->isSolved = true;
 				}
@@ -67,39 +74,33 @@ void Player::putItemIntoBag(Item* item) {
 			return;
 		}
 	}
-	bag.push_back(item);
+	bag[type].push_back(item);
 }
-bool Player::printBag() {
-	if (bag.size() == 0) {
-		cout << "背包是空的。\n\n";
+bool Player::printBag(int type) {
+	if (bag[type].size() == 0) {
+		cout << "此背包是空的。\n\n";
 		return false;
 	}
 	else {
-		for (int i = 0; i < bag.size(); i++) {
+		for (int i = 0; i < bag[type].size(); i++) {
 			cout << i + 1 << ".";
-			bag[i]->printDetails();
+			bag[type][i]->printDetails();
 		}	
 		cout << endl;
 		return true;
 	}
 }
-bool Player::useItem(int index) {
-	try {
-		return this->bag.at(index)->use(this);
-	}
-	catch (exception) {
-		cout << "錯誤。";
-		return false;
-	}
-
+bool Player::useItem(int index, int type) {
+	return this->bag[type].at(index)->use(this);
 }
-void Player::removeItem(Item *item,int count) {
-	for (int i = 0; i < this->bag.size(); i++) {
-		if (this->bag[i]->name == item->name) {
-			if(count==-1)this->bag.erase(bag.begin() + i);
+void Player::removeItem(Item *item ,int count) {
+	int type = item->type;
+	for (int i = 0; i < this->bag[type].size(); i++) {
+		if (this->bag[type][i]->name == item->name) {
+			if(count==-1)this->bag[type].erase(bag[type].begin() + i);
 			else {
-				this->bag[i]->drop(count);
-				if (this->bag[i]->getCount() == 0)this->bag.erase(bag.begin() + i);
+				this->bag[type][i]->drop(count);
+				if (this->bag[type][i]->getCount() == 0)this->bag[type].erase(bag[type].begin() + i);
 			}
 			return;
 		}
@@ -114,8 +115,8 @@ Map* Player::getLocate() {
 vector<Task*> Player::getTasks() {
 	return this->tasks;
 }
-void Player::solveTask(Task* task) {
-	for (Item* item : this->bag) {
+void Player::solveTask(Task* task,int type) {
+	for (Item* item : this->bag[type]) {
 		for (auto& pair : task->requireItems) {
 			if (item->name == pair.first) {
 				this->removeItem(item, pair.second);
@@ -123,4 +124,11 @@ void Player::solveTask(Task* task) {
 			}
 		}
 	}
+}
+void Player::OperateEquipment(Wearable* wearable) {
+	wearable->attachTo(this);
+}
+vector<vector<Item*>> Player::getBag()
+{
+	return bag;
 }

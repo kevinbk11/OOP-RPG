@@ -2,5 +2,8 @@
 #include "../../SkillEffect/SkillEffects/HarmfulEffect.h"
 Bite::Bite() {
 	this->skillName = "撕咬";
-	this->setSkillEffect(new HarmfulEffect(0.8));
+}
+void Bite::execute(FightableMob* caster, Mob* target) {
+	this->addEffect(new HarmfulEffect(1.0));
+	this->executeEffect(caster,target);
 }

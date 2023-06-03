@@ -41,7 +41,7 @@ void TaskDialogObject::execute(Player* player,NPC* npc) {
 			cout << this->solved << endl << endl;
 			this->parent->respond[this->pathIndex-1] = this->end;
 			player->getBooty(this->task->getPrize());
-			player->solveTask(this->task);
+			player->solveTask(this->task,0);
 			delete this->task->getPrize();
 		}
 		else if (!this->task->isAccepted && this->task->isSolved)/*已經交差過了*/ {

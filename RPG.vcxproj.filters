@@ -126,6 +126,27 @@
     <ClCompile Include="Utils\TaskChecker.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject\Item\Items\Equipment\Wearable.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Weapons\WoodSword.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Weapon.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Armor.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Armor\LeatherArmor.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\FireEffect.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\FireSword.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -246,6 +267,30 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Utils\TaskChecker.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\Equipment\Wearable.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Weapons\WoodSword.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\getExistIndex.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Weapon.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Armor.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Armor\LeatherArmor.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\FireEffect.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\FireSword.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

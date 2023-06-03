@@ -4,10 +4,10 @@ class AttackController
 {
 public:
 	static AttackController* getInstance();
-	void attack(Player*, Mob*);
-	void attack(FightableMob*, Player*);
+	void attack(FightableMob*, Mob*);
 	void choiceSkill(Player*);
 	void choiceSkill(FightableMob*);
+	void executeDamageCalculate(FightableMob*, Mob*);
 private:
 	static AttackController* controller;
 	AttackController();

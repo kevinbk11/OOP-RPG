@@ -2,6 +2,7 @@
 Item::Item(int count) {
 	this->count = count;
 }
+Item::Item() {}
 int Item::getCount() {
 	return this->count;
 }

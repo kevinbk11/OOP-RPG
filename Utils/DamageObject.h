@@ -1,10 +1,12 @@
 #pragma once
+#include <string>
 class DamageObject
 {
 private:
 	int damage;
 public:
-	DamageObject(int);
+	std::string type;
+	DamageObject(int,int);
 	int getDamageValue();
 };
 

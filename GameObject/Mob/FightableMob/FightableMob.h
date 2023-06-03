@@ -16,13 +16,15 @@ public:
 	vector<Skill*> getSkills();
 	void setSkill(Skill*);
 	virtual void setSkillChoice();
-	void setSkillChoice(Skill);
+	void setSkillChoice(Skill*);
 	void executeSkill(FightableMob*,Mob*);
+	void adjustDamageValue(int delta);
+	void adjustDefenseValue(int delta);
 	friend class SkillEffect;
 protected:
 	float basicDamageValue = 0;
 	vector<Skill*> skills = vector<Skill*>();
-	Skill skillChoice;
+	Skill* skillChoice;
 	void initDamageValue(float);
 };
 

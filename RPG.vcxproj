@@ -127,8 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\FireSword.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\FireEffect.cpp" />
+    <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Armor.cpp" />
     <ClCompile Include="GameObject\Task\Task.cpp" />
     <ClCompile Include="GameObject\Task\Tasks\Task1.cpp" />
+    <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Armor\LeatherArmor.cpp" />
     <ClCompile Include="Utils\TaskChecker.cpp" />
     <ClCompile Include="Utils\Dialog\TaskDialogObject.cpp" />
     <ClCompile Include="Utils\Dialog\DialogObject.cpp" />
@@ -164,10 +168,18 @@
     <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Enemys\Wolf.cpp" />
     <ClCompile Include="GameObject\NPC\NPCs\Villager.cpp" />
     <ClCompile Include="GameObject\Item\Items\WolfFur.cpp" />
+    <ClCompile Include="GameObject\Item\Items\Equipment\Wearable.cpp" />
+    <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Weapons\WoodSword.cpp" />
+    <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\FireSword.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\FireEffect.h" />
+    <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Armor.h" />
     <ClInclude Include="GameObject\Task\Task.h" />
     <ClInclude Include="GameObject\Task\Tasks\Task1.h" />
+    <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Armor\LeatherArmor.h" />
+    <ClInclude Include="Utils\getExistIndex.h" />
     <ClInclude Include="Utils\TaskChecker.h" />
     <ClInclude Include="Utils\Dialog\TaskDialogObject.h" />
     <ClInclude Include="Utils\Dialog\DialogObject.h" />
@@ -206,6 +218,9 @@
     <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys\Wolf.h" />
     <ClInclude Include="GameObject\NPC\NPCs\Villager.h" />
     <ClInclude Include="GameObject\Item\Items\WolfFur.h" />
+    <ClInclude Include="GameObject\Item\Items\Equipment\Wearable.h" />
+    <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Weapons\WoodSword.h" />
+    <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,10 +1,9 @@
 #pragma once
-
 #include "../../Skill.h"
-class NormalAttack :public Skill
+class FireSword :public Skill
 {
 public:
-	NormalAttack();
+	FireSword();
 	void execute(FightableMob* caster, Mob* target);
 };
 

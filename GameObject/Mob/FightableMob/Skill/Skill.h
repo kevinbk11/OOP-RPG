@@ -1,6 +1,6 @@
 #pragma once
 #include<string>
-
+#include "../Skill/SkillEffect/SkillEffect.h"
 class FightableMob;
 class Mob;
 class SkillEffect;
@@ -8,10 +8,12 @@ class SkillEffect;
 class Skill
 {
 public:
+	
 	std::string skillName;
-	void setSkillEffect(SkillEffect*);
+	void addEffect(SkillEffect*);
 	void executeEffect(FightableMob*, Mob*);
+	virtual void execute(FightableMob*, Mob*);
 private:
-	SkillEffect* effect;
+	vector<SkillEffect*> effects;
 };
 

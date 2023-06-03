@@ -1,5 +1,5 @@
 ﻿#include "GameController.h"
-#include <fstream>
+#include "../../Utils/getExistIndex.h"
 GameController* GameController::controller = nullptr;
 GameController *GameController::getInstance() {
 	if (controller == nullptr) {
@@ -11,10 +11,6 @@ void GameController::initMap() {
 	this->mapObject=GameMapGenerator::generate();
 }
 void GameController::gameStart(Player* player) {
-	if (player == nullptr) {
-		cout << "讀取玩家中。";
-		return;
-	}
 	cout << "遊戲開始\n";
 	this->initMap();
 	player->setLocate(this->mapObject->getRespawnPoint());
@@ -22,7 +18,7 @@ void GameController::gameStart(Player* player) {
 		cout <<"輸入0前往上一張地圖\n\n輸入1前往下一張地圖\n\n";
 		cout << "輸入2查看此處的怪物並選擇要戰鬥的怪物\n\n輸入3查看此處的NPC並選擇要對話的NPC\n\n";
 		cout << "輸入4查看角色狀態\n\n";
-		
+		cout << "輸入5打開背包。\n\n";
 		Map* locate = player->getLocate();
 		cout << "目前所在地:"<<locate->name<<endl;
 		int command;
@@ -47,19 +43,10 @@ void GameController::gameStart(Player* player) {
 					for (int i = 0; i < mobs.size(); i++) {
 						cout << "怪物" << i + 1 << ":" << mobs[i]->name << endl;
 					}
-					Enemy* mob=nullptr;
-					do {
-						cin >> command;
-						if (command <= 0)break;
-						try { mob = mobs.at(command - 1); break; }
-						catch (exception) { 
-							cout << "不存在的怪物。\n";
-							continue; 
-						}
-					} while (true);
-					if (mob == nullptr)continue;
 					FightController *controller = ControlCenter::getInstance<FightController>();
-					controller->fight(player, mob);
+					command = getExistIndex(mobs);
+					if (command == -1)continue;
+					controller->fight(player, mobs[command]);
 					cout << endl;
 				}
 				break;
@@ -72,20 +59,11 @@ void GameController::gameStart(Player* player) {
 					for (int i = 0; i < NPCs.size(); i++) {
 						cout << "NPC." << i + 1 << ":" << NPCs[i]->name << endl;
 					}
-					NPC* npc=nullptr;
-					do {
-						cin >> command;
-						if (command <= 0)break;
-						try { npc = NPCs.at(command-1); break; }
-						catch (exception) {
-							cout << "不存在的NPC。\n";
-							continue;
-						}
-					} while (true);
-					if (npc == nullptr)continue;
 					system("cls");
 					InteractiveController* controller = ControlCenter::getInstance<InteractiveController>();
-					controller->interactive(player, npc);
+					command = getExistIndex(NPCs);
+					if (command == -1)continue;
+					controller->interactive(player, NPCs[getExistIndex(NPCs)]);
 					cout << endl;
 				}
 				break;
@@ -93,6 +71,20 @@ void GameController::gameStart(Player* player) {
 			case 4: {
 				player->printDetails();
 				break;
+			}
+			case 5:{
+				cout << "請輸入你要打開的背包，或者輸入0來返回\n\n";
+				cout << "1.道具背包\n\n";
+				cout << "2.裝備背包\n\n";
+				vector<vector<Item*>> bag = player->getBag();
+				int type = getExistIndex(bag);
+				if (type == -1)continue;
+				if (player->printBag(type)) {
+					cout << "\n請輸入你要使用的道具編號，或者輸入0來取消\n\n";
+					command = getExistIndex(bag[type]);
+					if (command == -1)continue;
+					player->useItem(command, type);
+				}
 			}
 		}
 	}
