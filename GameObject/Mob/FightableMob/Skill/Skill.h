@@ -9,7 +9,7 @@ class Skill
 {
 public:
 	
-	std::string skillName;
+	string skillName;
 	void addEffect(SkillEffect*);
 	void executeEffect(Mob*);
 	virtual void execute(FightableMob*, Mob*);

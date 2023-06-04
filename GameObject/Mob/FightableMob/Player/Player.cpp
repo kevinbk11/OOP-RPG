@@ -125,9 +125,6 @@ void Player::solveTask(Task* task,int type) {
 		}
 	}
 }
-void Player::OperateEquipment(Wearable* wearable) {
-	wearable->attachTo(this);
-}
 vector<vector<Item*>> Player::getBag()
 {
 	return bag;

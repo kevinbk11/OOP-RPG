@@ -83,6 +83,7 @@ void GameController::gameStart(Player* player) {
 					command = getExistIndex(bag[type]);
 					if (command == -1)continue;
 					player->useItem(command, type);
+					cout << endl << endl;
 				}
 				break;
 			}

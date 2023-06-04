@@ -26,7 +26,6 @@ public:
 	void solveTask(Task*,int);
 	vector<Task*> getTasks();
 	Map* getLocate();
-	void OperateEquipment(Wearable*);
 	Wearable* weapon = nullptr;
 	Wearable* armor = nullptr;
 	vector<vector<Item*>> getBag();
