@@ -11,7 +11,7 @@ public:
 	
 	std::string skillName;
 	void addEffect(SkillEffect*);
-	void executeEffect(FightableMob*, Mob*);
+	void executeEffect(Mob*);
 	virtual void execute(FightableMob*, Mob*);
 private:
 	vector<SkillEffect*> effects;

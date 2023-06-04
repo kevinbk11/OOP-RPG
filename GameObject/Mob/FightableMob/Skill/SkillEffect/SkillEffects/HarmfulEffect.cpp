@@ -1,7 +1,6 @@
 #include "HarmfulEffect.h"
 HarmfulEffect::HarmfulEffect(double magnification) {
 	this->magnification = magnification;
-	this->continous = 1;
 	this->times = 1;
 	this->effectState = 0;
 }

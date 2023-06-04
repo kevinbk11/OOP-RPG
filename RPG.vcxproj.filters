@@ -147,6 +147,24 @@
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\FireSword.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\PowerEffect.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\Charge.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Enemys\Pig.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Strike.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Item\Items\Pork.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Task\Tasks\Task2.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -291,6 +309,24 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\FireSword.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\PowerEffect.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\Charge.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys\Pig.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Strike.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Item\Items\Pork.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Task\Tasks\Task2.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

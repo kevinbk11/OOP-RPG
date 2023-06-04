@@ -31,7 +31,7 @@ void Player::getBooty(Booty* booty) {
 }
 void Player::addExp(int exp) {
 	this->nowExp += exp;
-	if (this->isLevelUp())this->levelUp();
+	while (this->isLevelUp())this->levelUp();
 }
 bool Player::isLevelUp() {
 	return this->nowExp >= this->neededExp;
@@ -40,7 +40,7 @@ void Player::levelUp() {
 	cout << endl << "LEVEL UP!!!" << endl;
 	this->level += 1;
 	this->nowExp -= this->neededExp;
-	this->neededExp += level * 5;
+	this->neededExp += (level - 1) * 5;
 	this->hp = this->fullHp;
 	this->mp = this->fullMp;
 }

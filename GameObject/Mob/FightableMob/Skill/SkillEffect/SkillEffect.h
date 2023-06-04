@@ -5,13 +5,14 @@ class Mob;
 class SkillEffect
 {
 public:
-	int continous;
 	int times;
 	virtual float calculateDamage(FightableMob*, Mob*)=0;
-	void execute(float, Mob* target);
+	virtual void execute(float, FightableMob* caster,Mob* target);
+	virtual ~SkillEffect();
 	int effectState;
 	enum class STATE {
 		BURING = 1,
+		CHARGED = 2,
 	};
 };
 

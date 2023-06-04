@@ -1,6 +1,6 @@
 #include "LeatherArmor.h"
 LeatherArmor::LeatherArmor(int count):Armor(count) {
-	this->name = "皮甲裝甲";
-	this->defenseValue = 3;
-	this->describe = "有點破舊的裝甲。";
+	this->name = "皮革裝甲";
+	this->defenseValue = 12;
+	this->describe = "雖然是皮革製的，但是還蠻強韌的。";
 }

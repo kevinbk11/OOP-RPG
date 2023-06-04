@@ -5,5 +5,5 @@ NormalAttack::NormalAttack() {
 }
 void NormalAttack::execute(FightableMob* caster,Mob* target) {
 	this->addEffect(new HarmfulEffect(1.0));
-	this->executeEffect(caster, target);
+	this->executeEffect(target);
 }

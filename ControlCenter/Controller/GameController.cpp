@@ -59,11 +59,10 @@ void GameController::gameStart(Player* player) {
 					for (int i = 0; i < NPCs.size(); i++) {
 						cout << "NPC." << i + 1 << ":" << NPCs[i]->name << endl;
 					}
-					system("cls");
 					InteractiveController* controller = ControlCenter::getInstance<InteractiveController>();
 					command = getExistIndex(NPCs);
 					if (command == -1)continue;
-					controller->interactive(player, NPCs[getExistIndex(NPCs)]);
+					controller->interactive(player, NPCs[command]);
 					cout << endl;
 				}
 				break;
@@ -85,6 +84,7 @@ void GameController::gameStart(Player* player) {
 					if (command == -1)continue;
 					player->useItem(command, type);
 				}
+				break;
 			}
 		}
 	}

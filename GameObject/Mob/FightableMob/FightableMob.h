@@ -20,6 +20,8 @@ public:
 	void executeSkill(FightableMob*,Mob*);
 	void adjustDamageValue(int delta);
 	void adjustDefenseValue(int delta);
+	void setDamageValue(int value);
+	void setDefenseValue(int value);
 	friend class SkillEffect;
 protected:
 	float basicDamageValue = 0;

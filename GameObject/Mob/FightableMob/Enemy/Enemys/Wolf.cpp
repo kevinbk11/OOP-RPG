@@ -4,7 +4,7 @@ Wolf::Wolf() {
 	this->name = "³¥¯T";
 	initDamageValue(25);
 	initDefenseValue(5);
-	initHp(1000);
+	initHp(80);
 	initMp(0);
 	this->booty->exp = 20;
 	this->booty->money = 10;

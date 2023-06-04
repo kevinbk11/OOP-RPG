@@ -127,12 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\Charge.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\FireSword.cpp" />
     <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\FireEffect.cpp" />
     <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Armor.cpp" />
     <ClCompile Include="GameObject\Task\Task.cpp" />
     <ClCompile Include="GameObject\Task\Tasks\Task1.cpp" />
     <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Armor\LeatherArmor.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\PowerEffect.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Enemy\Enemys\Pig.cpp" />
+    <ClCompile Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Strike.cpp" />
+    <ClCompile Include="GameObject\Item\Items\Pork.cpp" />
+    <ClCompile Include="GameObject\Task\Tasks\Task2.cpp" />
     <ClCompile Include="Utils\TaskChecker.cpp" />
     <ClCompile Include="Utils\Dialog\TaskDialogObject.cpp" />
     <ClCompile Include="Utils\Dialog\DialogObject.cpp" />
@@ -173,12 +179,18 @@
     <ClCompile Include="GameObject\Item\Items\Equipment\Equipments\Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\Charge.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\FighterSkills\FireSword.h" />
     <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\FireEffect.h" />
     <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Armor.h" />
     <ClInclude Include="GameObject\Task\Task.h" />
     <ClInclude Include="GameObject\Task\Tasks\Task1.h" />
     <ClInclude Include="GameObject\Item\Items\Equipment\Equipments\Armor\LeatherArmor.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\SkillEffect\SkillEffects\PowerEffect.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Enemy\Enemys\Pig.h" />
+    <ClInclude Include="GameObject\Mob\FightableMob\Skill\Skills\EnemySkills\Strike.h" />
+    <ClInclude Include="GameObject\Item\Items\Pork.h" />
+    <ClInclude Include="GameObject\Task\Tasks\Task2.h" />
     <ClInclude Include="Utils\getExistIndex.h" />
     <ClInclude Include="Utils\TaskChecker.h" />
     <ClInclude Include="Utils\Dialog\TaskDialogObject.h" />

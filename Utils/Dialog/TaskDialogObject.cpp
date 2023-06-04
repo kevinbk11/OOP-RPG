@@ -1,4 +1,5 @@
 #include "TaskDialogObject.h"
+#include "../TaskChecker.h"
 TaskDialogObject::TaskDialogObject(Task* task) {
 	this->task = task;
 	this->sentence = "提交任務:"+this->task->name;
@@ -31,7 +32,16 @@ void TaskDialogObject::execute(Player* player,NPC* npc) {
 		cout << "已接受「" << this->task->name << "」任務。\n\n";
 		this->task->isAccepted = true;
 		this->parent->respond[this->pathIndex-1] = this->sentence;
-		player->acceptTask(this->task);	
+		player->acceptTask(this->task);
+		for (int type = 0; type < 2; type++) {
+			vector<vector<Item*>> bag = player->getBag();
+			for (auto item : bag[type]) {
+				if (TaskProcessor::check(this->task, *item)) {
+					cout << "\n任務「" << this->task->name << "」完成。\n\n";
+					this->task->isSolved = true;
+				}
+			}
+		}
 	}
 	else {
 		system("cls");

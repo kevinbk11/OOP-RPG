@@ -19,13 +19,13 @@ void AttackController::executeDamageCalculate(FightableMob* mob1, Mob* mob2) {
 	for (int i = 0; i < effects->size(); i++) {
 		SkillEffect* effect = effects->at(i);
 		float damage = effect->calculateDamage(mob1, mob2);
-		effect->execute(damage, mob2);
+		effect->execute(damage, mob1,mob2);
 		if (effect->times == 0) {
 			if ((effect->effectState & mob2->effectState)) {
 				mob2->effectState -= effect->effectState;
 			}
-			effects->erase(effects->begin() + i);
 			delete effect;
+			effects->erase(effects->begin() + i);
 			i--;
 		}
 	}

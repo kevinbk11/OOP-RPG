@@ -5,7 +5,10 @@ GameMap* GameMapGenerator::generate() {
 	maps.push_back(builder->setName("初心鎮")
 		->setNPC(new Villager())
 		->createMap());
-	maps.push_back(builder->setName("草原1")
+	maps.push_back(builder->setName("草原")
+		->setMonster(new Pig())
+		->createMap());
+	maps.push_back(builder->setName("森林")
 		->setMonster(new Wolf())
 		->createMap());
 	MapLinker* linker = new MapLinker();

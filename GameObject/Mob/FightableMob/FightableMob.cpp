@@ -37,3 +37,9 @@ void FightableMob::adjustDamageValue(int delta) {
 void FightableMob::adjustDefenseValue(int delta) {
 	this->basicDefenseValue += delta;
 }
+void FightableMob::setDamageValue(int value) {
+	this->basicDamageValue = value;
+}
+void FightableMob::setDefenseValue(int value) {
+	this->basicDefenseValue = value;
+}

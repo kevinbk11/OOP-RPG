@@ -1,3 +1,4 @@
+
 #include "TaskChecker.h"
 void TaskProcessor::update(vector<Task*> tasks, string monsterName) {
 	for (auto task : tasks) {

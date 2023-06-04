@@ -47,7 +47,7 @@ void FightController::fight(Player* player, Enemy* mob){
 					break;
 				case 3:
 					cout << "逃跑成功。\n";
-					return;
+					break;
 				default:
 					cout << "錯誤!\n";
 					continue;
@@ -60,6 +60,12 @@ void FightController::fight(Player* player, Enemy* mob){
 		isPlayerTurn = !isPlayerTurn;
 	}
 	system("cls");
+	player->effectState = 0;
+	for (SkillEffect* effect : player->selfEffect) {
+		delete effect;
+	}
+	player->selfEffect.clear();
+	if (player->isLive() && mob->isLive())return;//代表逃跑
 	cout <<endl<< "戰鬥結束。\n";
 	if (player->isLive()) {	
 		TaskProcessor::update(player->getTasks(), mob->name);

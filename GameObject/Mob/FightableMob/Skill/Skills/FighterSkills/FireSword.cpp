@@ -11,5 +11,5 @@ void FireSword::execute(FightableMob* caster, Mob* target) {
 		this->addEffect(effect1);
 	}
 	this->addEffect(effect2);
-	this->executeEffect(caster, target);
+	this->executeEffect(target);
 }

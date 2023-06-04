@@ -5,32 +5,19 @@
 using namespace std;
 int main()
 {
-    cout << "輸入0為創建角色，輸入1為讀檔。\n";
-   
-    int command;
-    cin >> command;
     GameController* gameController = ControlCenter::getInstance<GameController>();
-    switch (command) 
-    {
-        case 0: {
-            cout << "請輸入你的角色名字。\n";
-            string name;
-            cin >> name;
-            cout << "請輸入你的職業代碼，1為戰士，2為法師。\n";
-            cin >> command;
-            CreateHeroController* creater = nullptr;
-            Player* player=nullptr;
-            creater = ControlCenter::getInstance<CreateHeroController>();
-            player = creater->createPlayer(name, command);
-            system("cls");
-            gameController->gameStart(player);
-            break;
-        }
-        case 1: {
-            gameController->gameStart(nullptr);
-            break;
-        }
-    }
+    cout << "請輸入你的角色名字。\n";
+    string name;
+    cin >> name;
+    /*cout << "請輸入你的職業代碼，1為戰士，2為法師。\n";
+    cin >> command;*/
+    CreateHeroController* creater = nullptr;
+    Player* player=nullptr;
+    creater = ControlCenter::getInstance<CreateHeroController>();
+    player = creater->createPlayer(name, 1);
+    system("cls");
+    gameController->gameStart(player);
+
 }
 
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表
